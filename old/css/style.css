@@ -145,16 +145,15 @@ ul { list-style: none; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: var(--primary);
-  box-shadow: 0 2px 30px rgba(10,37,64,0.25);
+  background: transparent;
   transition: var(--transition);
-  padding: 10px 0;
+  padding: 18px 0;
 }
 
 #navbar.scrolled {
   background: var(--primary);
-  box-shadow: 0 2px 30px rgba(10,37,64,0.35);
-  padding: 8px 0;
+  box-shadow: 0 2px 30px rgba(10,37,64,0.25);
+  padding: 12px 0;
 }
 
 .nav-inner {
@@ -167,21 +166,39 @@ ul { list-style: none; }
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 12px;
+}
+
+.nav-logo-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--primary);
   flex-shrink: 0;
 }
 
-.nav-logo-img {
-  height: 54px;
-  width: auto;
-  display: block;
-  filter: brightness(0) invert(1); /* white version on dark bg */
-  transition: var(--transition);
+.nav-logo-text { display: flex; flex-direction: column; }
+.nav-logo-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
 }
-
-/* Keep old icon/text classes as fallback (hidden when img present) */
-.nav-logo-icon { display: none; }
-.nav-logo-text { display: none; }
+.nav-logo-tagline {
+  font-size: 10px;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
 
 .nav-links {
   display: flex;
@@ -300,48 +317,27 @@ ul { list-style: none; }
   cursor: pointer;
 }
 
-/* ─── Hero Slider ─────────────────────────── */
+/* ─── Hero ─────────────────────────────── */
 .hero {
   min-height: 100vh;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(135deg, #071d33 0%, #0A2540 50%, #0e2e4d 100%);
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Slider track */
-.hero-slider {
+.hero-bg-pattern {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(201,161,74,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(201,161,74,0.06) 0%, transparent 40%),
+    linear-gradient(45deg, rgba(255,255,255,0.02) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.02) 25%, transparent 25%);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
 }
 
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.hero-slide.active { opacity: 1; }
-
-/* Dark overlay on each slide */
-.hero-slide::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(7,29,51,0.82) 0%,
-    rgba(10,37,64,0.70) 50%,
-    rgba(14,46,77,0.60) 100%
-  );
-}
-
-/* Geometric decoration */
 .hero-geo {
   position: absolute;
   right: -60px;
@@ -350,92 +346,25 @@ ul { list-style: none; }
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  border: 1px solid rgba(201,161,74,0.18);
+  border: 1px solid rgba(201,161,74,0.12);
   pointer-events: none;
-  z-index: 1;
 }
 .hero-geo::before {
   content: '';
   position: absolute;
   inset: 40px;
   border-radius: 50%;
-  border: 1px solid rgba(201,161,74,0.10);
+  border: 1px solid rgba(201,161,74,0.08);
 }
 .hero-geo::after {
   content: '';
   position: absolute;
   inset: 90px;
   border-radius: 50%;
-  border: 1px solid rgba(201,161,74,0.06);
+  border: 1px solid rgba(201,161,74,0.05);
 }
 
-/* Content sits above slider */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 130px 0 90px;
-}
-
-/* Slider dots */
-.slider-dots {
-  position: absolute;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  display: flex;
-  gap: 10px;
-}
-
-.slider-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.35);
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-  padding: 0;
-}
-
-.slider-dot.active {
-  background: var(--accent);
-  width: 28px;
-  border-radius: 5px;
-}
-
-/* Slider arrows */
-.slider-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: var(--white);
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 20px;
-  transition: var(--transition);
-  backdrop-filter: blur(4px);
-}
-
-.slider-arrow:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--primary);
-}
-
-.slider-arrow-prev { left: 24px; }
-.slider-arrow-next { right: 24px; }
-
-/* Remove old hero-bg-pattern (not needed with images) */
-.hero-bg-pattern { display: none; }
+.hero-content { position: relative; z-index: 2; padding: 120px 0 80px; }
 
 .hero-badge {
   display: inline-flex;
@@ -1409,19 +1338,4 @@ footer {
   .hero-cta { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
   .plans-grid { grid-template-columns: 1fr; }
-}
-
-/* ─── Footer Logo ─────────────────────── */
-.footer-logo-img {
-  height: 60px;
-  width: auto;
-  display: block;
-  margin-bottom: 16px;
-  filter: brightness(0) invert(1);
-}
-
-/* ─── Navbar logo mobile fix ─────────── */
-@media (max-width: 768px) {
-  .nav-logo-img { height: 42px; }
-  .slider-arrow { display: none; }
 }
