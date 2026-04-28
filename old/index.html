@@ -15,11 +15,7 @@
   <div class="container">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon">S</div>
-        <div class="nav-logo-text">
-          <span class="nav-logo-name">SOAA</span>
-          <span class="nav-logo-tagline">Sindh Outdoor Advertisers</span>
-        </div>
+        <img src="images/soaa-logo.png" alt="SOAA - Sindh Outdoor Advertisers Association" class="nav-logo-img" />
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
@@ -30,7 +26,6 @@
             <li><a href="former-presidents.html">Former President List</a></li>
           </ul>
         </li>
-        
         <li class="dropdown">
           <a href="#">Members Area</a>
           <ul class="dropdown-menu">
@@ -39,12 +34,11 @@
             <li><a href="become-a-member.html">Become a Member</a></li>
           </ul>
         </li>
-        <!-- <li><a href="members.html">Members</a></li> -->
         <li><a href="events.html">Events</a></li>
         <li><a href="news.html">News</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a href="membership.html" class="btn btn-primary nav-cta btn-sm">Become a Member</a>
+      <a href="become-a-member.html" class="btn btn-primary nav-cta btn-sm">Become a Member</a>
       <button class="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -57,17 +51,31 @@
   <button class="mobile-menu-close" aria-label="Close menu">✕</button>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="membership.html">Membership</a>
-  <!-- <a href="members.html">Members</a> -->
+  <a href="managing-committee.html">Managing Committee</a>
+  <a href="former-presidents.html">Former Presidents</a>
+  <a href="benefits.html">Benefits</a>
+  <a href="member-directory.html">Member Directory</a>
+  <a href="become-a-member.html">Become a Member</a>
   <a href="events.html">Events</a>
   <a href="news.html">News</a>
   <a href="contact.html">Contact</a>
 </div>
 
 <!-- ═══ HERO ═══ -->
+<!-- ═══ HERO ═══ -->
 <section class="hero">
-  <div class="hero-bg-pattern"></div>
+  <!-- Image Slider -->
+  <div class="hero-slider">
+    <div class="hero-slide" style="background-image:url('images/banner1.jpeg');"></div>
+    <div class="hero-slide" style="background-image:url('images/banner2.jpeg');"></div>
+  </div>
   <div class="hero-geo"></div>
+
+  <!-- Slider Arrows -->
+  <button class="slider-arrow slider-arrow-prev" aria-label="Previous slide">&#8592;</button>
+  <button class="slider-arrow slider-arrow-next" aria-label="Next slide">&#8594;</button>
+
+  <!-- Content -->
   <div class="container">
     <div class="hero-content">
       <div class="hero-badge">🏛️ Official Trade Body — Province of Sindh</div>
@@ -79,28 +87,16 @@
         The only representative trade body for media owners in Out-of-Home Advertising across Sindh. Uniting industry, shaping policy, driving growth.
       </p>
       <div class="hero-cta">
-        <a href="membership.html" class="btn btn-primary">Become a Member</a>
+        <a href="become-a-member.html" class="btn btn-primary">Become a Member</a>
         <a href="about.html" class="btn btn-outline">Explore SOAA</a>
       </div>
-      <!-- <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num" data-target="200" data-suffix="+">0</div>
-          <div class="hero-stat-label">Active Members</div>
-        </div>
-        <div>
-          <div class="hero-stat-num" data-target="12" data-suffix="+">0</div>
-          <div class="hero-stat-label">Years of Impact</div>
-        </div>
-        <div>
-          <div class="hero-stat-num" data-target="5000" data-suffix="+">0</div>
-          <div class="hero-stat-label">OOH Sites in Sindh</div>
-        </div>
-        <div>
-          <div class="hero-stat-num" data-target="30" data-suffix="+">0</div>
-          <div class="hero-stat-label">Industry Partners</div>
-        </div>
-      </div> -->
     </div>
+  </div>
+
+  <!-- Slider Dots -->
+  <div class="slider-dots">
+    <button class="slider-dot" aria-label="Slide 1"></button>
+    <button class="slider-dot" aria-label="Slide 2"></button>
   </div>
 </section>
 
@@ -346,7 +342,7 @@
         <p>Become a part of the industry's most authoritative trade body. Grow your business, protect your rights, and shape the future of outdoor advertising.</p>
       </div>
       <div class="cta-buttons">
-        <a href="membership.html" class="btn btn-primary">Join SOAA Today</a>
+        <a href="become-a-member.html" class="btn btn-primary">Join SOAA Today</a>
         <a href="contact.html" class="btn btn-outline">Get in Touch</a>
       </div>
     </div>
@@ -358,13 +354,9 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="nav-logo">
-          <div class="nav-logo-icon">S</div>
-          <div class="nav-logo-text">
-            <span class="nav-logo-name">SOAA</span>
-            <span class="nav-logo-tagline">Sindh Outdoor Advertisers</span>
-          </div>
-        </div>
+        <a href="index.html">
+          <img src="images/soaa-logo.png" alt="SOAA" class="footer-logo-img" />
+        </a>
         <p>The only representative trade body for media owners in Out-of-Home Advertising across the province of Sindh, Pakistan.</p>
         <div class="footer-socials">
           <a href="#" class="social-link" aria-label="Facebook">f</a>
@@ -378,18 +370,20 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="membership.html">Membership</a></li>
-          <li><a href="members.html">Member Directory</a></li>
+          <li><a href="managing-committee.html">Managing Committee</a></li>
+          <li><a href="former-presidents.html">Former Presidents</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Resources</h4>
+        <h4>Members Area</h4>
         <ul>
+          <li><a href="benefits.html">Benefits</a></li>
+          <li><a href="member-directory.html">Member Directory</a></li>
+          <li><a href="become-a-member.html">Become a Member</a></li>
           <li><a href="#">OOH Research</a></li>
-          <li><a href="#">Member Benefits</a></li>
-          <li><a href="#">Advertiser Benefits</a></li>
           <li><a href="#">OMA's Rating</a></li>
           <li><a href="#">Online Arbitration</a></li>
           <li><a href="#">Member Portal</a></li>

@@ -4,45 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── Hero Image Slider ─────────────────── */
-  const slides = document.querySelectorAll('.hero-slide');
-  const dots   = document.querySelectorAll('.slider-dot');
-  const prevBtn = document.querySelector('.slider-arrow-prev');
-  const nextBtn = document.querySelector('.slider-arrow-next');
-  let current = 0;
-  let sliderTimer = null;
-
-  function goToSlide(n) {
-    slides[current].classList.remove('active');
-    dots[current] && dots[current].classList.remove('active');
-    current = (n + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current] && dots[current].classList.add('active');
-  }
-
-  function startAutoplay() {
-    sliderTimer = setInterval(() => goToSlide(current + 1), 5000);
-  }
-
-  function resetAutoplay() {
-    clearInterval(sliderTimer);
-    startAutoplay();
-  }
-
-  if (slides.length > 0) {
-    slides[0].classList.add('active');
-    dots[0] && dots[0].classList.add('active');
-    startAutoplay();
-
-    prevBtn && prevBtn.addEventListener('click', () => { goToSlide(current - 1); resetAutoplay(); });
-    nextBtn && nextBtn.addEventListener('click', () => { goToSlide(current + 1); resetAutoplay(); });
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => { goToSlide(i); resetAutoplay(); });
-    });
-  }
-
-
+  /* ── Navbar scroll ─────────────────────── */
   const navbar = document.getElementById('navbar');
   if (navbar) {
     window.addEventListener('scroll', () => {
