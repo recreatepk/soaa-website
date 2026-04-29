@@ -451,6 +451,9 @@
     <div class="committee-info"><h3>Syed Ammar Ul Hasan Naqvi</h3><p>Executive Member</p></div>
   </div>
 
+  <div class="committee-card" style="display: none;">
+  </div>
+
 </div>
       </div>
 
@@ -500,82 +503,139 @@
 <script src="js/script.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const track = document.getElementById("committeeTrack");
-  const cards = Array.from(track.querySelectorAll(".committee-card"));
-  const prevBtn = document.querySelector(".committee-prev");
-  const nextBtn = document.querySelector(".committee-next");
-  const wrapper = document.querySelector(".committee-track-wrap");
 
-  let currentIndex = 2;
-  let startX = 0;
-  let currentTranslate = 0;
-  let isDragging = false;
+const track = document.getElementById("committeeTrack");
+const cards = Array.from(track.children);
+const prevBtn = document.querySelector(".committee-prev");
+const nextBtn = document.querySelector(".committee-next");
+const wrapper = document.querySelector(".committee-track-wrap");
 
-  function updateSlider() {
-    cards.forEach((card, index) => {
-      card.classList.toggle("active", index === currentIndex);
-    });
+let currentIndex = 2; 
+let startX = 0;
+let dragging = false;
 
-    const wrapperWidth = wrapper.offsetWidth;
-    const activeCard = cards[currentIndex];
-    const cardLeft = activeCard.offsetLeft;
-    const cardWidth = activeCard.offsetWidth;
+/* Infinite Loop Clones */
+const firstClone = cards[0].cloneNode(true);
+const secondClone = cards[1].cloneNode(true);
 
-    currentTranslate = (wrapperWidth / 2) - cardLeft - (cardWidth / 2);
-    track.style.transform = `translateX(${currentTranslate}px)`;
-  }
+const lastClone = cards[cards.length-1].cloneNode(true);
+const beforeLastClone = cards[cards.length-2].cloneNode(true);
 
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % cards.length;
-    updateSlider();
-  }
+track.insertBefore(beforeLastClone, track.firstChild);
+track.insertBefore(lastClone, track.firstChild);
 
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-    updateSlider();
-  }
+track.appendChild(firstClone);
+track.appendChild(secondClone);
 
-  nextBtn.addEventListener("click", nextSlide);
-  prevBtn.addEventListener("click", prevSlide);
+const allCards = Array.from(track.children);
 
-  wrapper.addEventListener("mousedown", function (e) {
-    isDragging = true;
-    startX = e.clientX;
-    wrapper.classList.add("dragging");
-  });
+currentIndex = 2;
 
-  window.addEventListener("mouseup", function (e) {
-    if (!isDragging) return;
+function updateSlider(animate=true){
 
-    const diff = e.clientX - startX;
+allCards.forEach(card=>{
+card.classList.remove("active");
+});
 
-    if (diff < -60) nextSlide();
-    if (diff > 60) prevSlide();
+allCards[currentIndex].classList.add("active");
 
-    isDragging = false;
-    wrapper.classList.remove("dragging");
-  });
+track.style.transition = animate
+? "transform .95s ease"
+: "none";
 
-  wrapper.addEventListener("touchstart", function (e) {
-    isDragging = true;
-    startX = e.touches[0].clientX;
-  }, { passive: true });
+const wrapperWidth = wrapper.offsetWidth;
+const activeCard = allCards[currentIndex];
 
-  wrapper.addEventListener("touchend", function (e) {
-    if (!isDragging) return;
+let translate =
+(wrapperWidth/2)
+- activeCard.offsetLeft
+- (activeCard.offsetWidth/2);
 
-    const endX = e.changedTouches[0].clientX;
-    const diff = endX - startX;
+track.style.transform=`translateX(${translate}px)`;
+}
 
-    if (diff < -50) nextSlide();
-    if (diff > 50) prevSlide();
+function nextSlide(){
+currentIndex++;
+updateSlider();
 
-    isDragging = false;
-  });
+if(currentIndex===allCards.length-2){
+setTimeout(()=>{
+currentIndex=2;
+updateSlider(false);
+},650);
+}
+}
 
-  window.addEventListener("resize", updateSlider);
+function prevSlide(){
+currentIndex--;
+updateSlider();
 
-  updateSlider();
+if(currentIndex===1){
+setTimeout(()=>{
+currentIndex=allCards.length-3;
+updateSlider(false);
+},650);
+}
+}
+
+/* Buttons */
+nextBtn.addEventListener("click",nextSlide);
+prevBtn.addEventListener("click",prevSlide);
+
+
+/* Mouse Drag Swipe */
+wrapper.addEventListener("mousedown",(e)=>{
+dragging=true;
+startX=e.clientX;
+wrapper.classList.add("dragging");
+});
+
+window.addEventListener("mouseup",(e)=>{
+if(!dragging) return;
+
+let diff=e.clientX-startX;
+
+if(diff<-60) nextSlide();
+if(diff>60) prevSlide();
+
+dragging=false;
+wrapper.classList.remove("dragging");
+});
+
+
+/* Mobile Swipe */
+wrapper.addEventListener("touchstart",(e)=>{
+startX=e.touches[0].clientX;
+dragging=true;
+},{passive:true});
+
+
+wrapper.addEventListener("touchend",(e)=>{
+if(!dragging) return;
+
+let endX=e.changedTouches[0].clientX;
+let diff=endX-startX;
+
+if(diff<-50) nextSlide();
+if(diff>50) prevSlide();
+
+dragging=false;
+});
+
+
+/* Optional Auto Rotate */
+setInterval(()=>{
+nextSlide();
+},5000);
+
+
+/* Resize */
+window.addEventListener("resize",()=>{
+updateSlider(false);
+});
+
+updateSlider(false);
+
 });
 </script>
 </body>
