@@ -6,6 +6,193 @@
   <title>About SOAA – Sindh Outdoor Advertisers Association</title>
   <meta name="description" content="Learn about SOAA's history, vision, mission, and the leadership team driving Sindh OOH advertising industry forward." />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Managing Body Pictures Gallery */
+.managing-gallery-section {
+  padding: 80px 0;
+  background: #f4f7fb;
+  overflow: hidden;
+}
+
+.section-heading {
+  margin-bottom: 45px;
+}
+
+.committee-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0 35px;
+}
+
+.committee-track-wrap {
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+}
+
+.committee-track-wrap.dragging {
+  cursor: grabbing;
+}
+
+.committee-track {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  transition: transform 0.55s ease;
+  will-change: transform;
+}
+
+.committee-card {
+  flex: 0 0 260px;
+  height: 360px;
+  position: relative;
+  transform: scale(0.78) perspective(900px) rotateY(12deg);
+  opacity: 0.45;
+  transition: all 0.55s ease;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.committee-card.active {
+  flex-basis: 440px;
+  height: 520px;
+  opacity: 1;
+  transform: scale(1) perspective(900px) rotateY(0);
+  z-index: 3;
+}
+
+.committee-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.committee-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 15px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.committee-info h3 {
+  margin: 0 0 6px;
+  color: #ffd400;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.committee-info p {
+  margin: 0;
+  color: #ffd400;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.committee-card.active .committee-info h3 {
+  font-size: 36px;
+}
+
+.committee-card.active .committee-info p {
+  font-size: 28px;
+}
+
+.committee-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 80px;
+  border: none;
+  background: #349dca;
+  color: #fff;
+  font-size: 34px;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s ease;
+}
+
+.committee-arrow:hover {
+  background: #2f398a;
+}
+
+.committee-prev {
+  left: 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.committee-next {
+  right: 0;
+  border-radius: 6px 0 0 6px;
+}
+
+@media (max-width: 991px) {
+  .committee-track {
+    gap: 35px;
+  }
+
+  .committee-card {
+    flex-basis: 220px;
+    height: 310px;
+  }
+
+  .committee-card.active {
+    flex-basis: 330px;
+    height: 440px;
+  }
+
+  .committee-card.active .committee-info h3 {
+    font-size: 28px;
+  }
+
+  .committee-card.active .committee-info p {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 575px) {
+  .managing-gallery-section {
+    padding: 55px 0;
+  }
+
+  .committee-track {
+    gap: 18px;
+  }
+
+  .committee-card,
+  .committee-card.active {
+    flex: 0 0 82vw;
+    height: 430px;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .committee-card:not(.active) {
+    opacity: 0.45;
+    transform: scale(0.9);
+  }
+
+  .committee-card.active .committee-info h3 {
+    font-size: 26px;
+  }
+
+  .committee-card.active .committee-info p {
+    font-size: 20px;
+  }
+
+  .committee-arrow {
+    width: 38px;
+    height: 65px;
+    font-size: 28px;
+  }
+}
+  </style>
 </head>
 <body>
 
@@ -18,7 +205,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li class="dropdown"><a href="about.html">About</a><ul class="dropdown-menu"><li><a href="about.html">About SOAA</a></li><li><a href="sub-committee.html">Sub Committee</a></li><li><a href="former-presidents.html">Former President List</a></li></ul></li>
+        <li class="dropdown"><a href="about.html">About</a><ul class="dropdown-menu"><li><a href="about.html">About SOAA</a></li><li><a href="sub-committee.html">Sub Committee</a></li><li><a href="former-leaders.html">Former Leader List</a></li></ul></li>
         <li class="dropdown"><a href="benefits.html">Members Area</a><ul class="dropdown-menu"><li><a href="benefits.html">Benefits</a></li><li><a href="member-directory.html">Member Directory</a></li><li><a href="become-a-member.html">Become a Member</a></li></ul></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="news.html">News</a></li>
@@ -31,7 +218,7 @@
 </nav>
 <div class="mobile-menu">
   <button class="mobile-menu-close" aria-label="Close menu">✕</button>
-  <a href="index.html">Home</a><a href="about.html">About SOAA</a><a href="sub-committee.html">Sub Committee</a><a href="former-presidents.html">Former Presidents</a><a href="benefits.html">Benefits</a><a href="member-directory.html">Member Directory</a><a href="become-a-member.html">Become a Member</a><a href="events.html">Events</a><a href="news.html">News</a><a href="contact.html">Contact</a>
+  <a href="index.html">Home</a><a href="about.html">About SOAA</a><a href="sub-committee.html">Sub Committee</a><a href="former-leaders.html">Former Leaders</a><a href="benefits.html">Benefits</a><a href="member-directory.html">Member Directory</a><a href="become-a-member.html">Become a Member</a><a href="events.html">Events</a><a href="news.html">News</a><a href="contact.html">Contact</a>
 </div>
 
 <section class="page-hero">
@@ -101,7 +288,7 @@
       </div>
       <div class="fade-in-right">
         <div style="background:var(--off-white);border-radius:var(--radius-lg);padding:40px;border:1px solid var(--light-gray);">
-          <h3 style="font-size:20px;margin-bottom:24px;color:var(--primary);">Chairman's Message</h3>
+          <!-- <h3 style="font-size:20px;margin-bottom:24px;color:var(--primary);">Chairman's Message</h3>
           <p style="font-style:italic;color:var(--dark-gray);line-height:1.8;margin-bottom:20px;font-size:15px;">
             "After serving this industry for 30 years, I've witnessed it rise to success and collapse to rock bottom, not once but multiple times. Poor law and order, broken payment cycles, and mismanagement have pushed many hardworking advertisers to the edge."
           </p>
@@ -117,7 +304,8 @@
               <div style="font-weight:700;font-size:15px;">Shahid Zaib</div>
               <div style="font-size:13px;color:var(--accent);font-weight:600;">Chairman, SOAA</div>
             </div>
-          </div>
+          </div> -->
+          <img src="images/side-banner2.jpg" alt="">
         </div>
       </div>
     </div>
@@ -125,7 +313,7 @@
 </section>
 
 <!-- President's Message -->
-<section class="section-pad" style="background:var(--off-white);">
+<!-- <section class="section-pad" style="background:var(--off-white);">
   <div class="container">
     <div class="text-center fade-in" style="margin-bottom:50px;">
       <div class="section-label">Leadership Message</div>
@@ -148,10 +336,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 <!-- General Secretary Message -->
-<section class="section-pad" style="background:var(--white);">
+<!-- <section class="section-pad" style="background:var(--white);">
   <div class="container">
     <div class="text-center fade-in" style="margin-bottom:45px;">
       <div class="section-label">Leadership Message</div>
@@ -170,10 +358,10 @@
       <p style="margin-top:22px;"><strong>Warm regards,</strong><br>Syed Sabir Ali<br>General Secretary<br>Sindh Outdoor Advertisers Association - SOAA</p>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Managing Body Pictures Gallery -->
-<section class="section-pad" style="background:var(--off-white);">
+<!-- <section class="section-pad" style="background:var(--off-white);">
   <div class="container">
     <div class="text-center fade-in" style="margin-bottom:45px;">
       <div class="section-label">About Us</div>
@@ -189,137 +377,91 @@
       <div class="gallery-card"><div class="gallery-photo">MK</div><h4>Masood Ali Khan</h4><p>Joint Secretary</p></div>
     </div>
   </div>
-</section>
-
-
-</section>
-
-<!-- Leadership -->
-<!-- <section class="leadership-section section-pad">
-  <div class="container">
-    <div class="text-center fade-in">
-      <div class="section-label">Our Team</div>
-      <h2 class="section-title">Association <span>Leadership</span></h2>
-      <div class="divider center"></div>
-      <p class="section-subtitle">Industry veterans leading SOAA's mission to transform Sindh outdoor advertising landscape.</p>
-    </div>
-    <div class="leaders-grid">
-      <div class="leader-card fade-in">
-        <div class="leader-photo">SZ</div>
-        <div class="leader-info">
-          <div class="leader-name">Shahid Zaib</div>
-          <div class="leader-role">Chairman</div>
-          <p class="leader-bio">30+ years of OOH industry experience. Visionary leader committed to industry reform and stability.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">AS</div>
-        <div class="leader-info">
-          <div class="leader-name">Aamir Siddiqui</div>
-          <div class="leader-role">President</div>
-          <p class="leader-bio">Leading SOAA's strategic direction, building a smarter, more responsible OOH ecosystem.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">SF</div>
-        <div class="leader-info">
-          <div class="leader-name">Syed Faisal Hussain</div>
-          <div class="leader-role">Vice President</div>
-          <p class="leader-bio">Senior industry leader with 20+ years of proven excellence in OOH. Joined the industry in 2001 through Vision Publicity.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">HR</div>
-        <div class="leader-info">
-          <div class="leader-name">Hafeez ur Rehman</div>
-          <div class="leader-role">Sr. Vice President</div>
-          <p class="leader-bio">Heading key coordination and arbitration committees for effective governance.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">SA</div>
-        <div class="leader-info">
-          <div class="leader-name">Syed Sabir Ali</div>
-          <div class="leader-role">General Secretary</div>
-          <p class="leader-bio">Managing SOAA's administrative operations and member communications.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">MK</div>
-        <div class="leader-info">
-          <div class="leader-name">Masood Ali Khan</div>
-          <div class="leader-role">Joint Secretary</div>
-          <p class="leader-bio">Supporting governance and coordination across committees and member relations.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">MU</div>
-        <div class="leader-info">
-          <div class="leader-name">Muhammad Usman</div>
-          <div class="leader-role">Finance Secretary</div>
-          <p class="leader-bio">30+ years in marketing including roles at American Express Bank and MCB Bank. Expert in OOH budgeting and financial strategy.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">NF</div>
-        <div class="leader-info">
-          <div class="leader-name">Najeeb Farooqi</div>
-          <div class="leader-role">Information Secretary</div>
-          <p class="leader-bio">Driving SOAA's communications, public relations, and business development initiatives.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </section> -->
 
-<!-- Committees -->
-<!-- <section class="section-pad" style="background:var(--white);">
+<!-- Managing Body Pictures Gallery -->
+<section class="managing-gallery-section">
   <div class="container">
-    <div class="text-center fade-in">
-      <div class="section-label">Governance</div>
-      <h2 class="section-title">Our <span>Committees</span></h2>
+    <div class="text-center fade-in section-heading">
+      <div class="section-label">About Us</div>
+      <h2 class="section-title">Managing Body <span>Pictures Gallery</span></h2>
       <div class="divider center"></div>
-      <p class="section-subtitle">Specialized committees ensuring effective governance, representation, and industry development.</p>
     </div>
-    <div class="benefits-grid" style="margin-top:50px;">
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">🤝</div>
-        <h3>Co-ordination Committee I</h3>
-        <p>Chaired by Syed Sabir Ali. Facilitates effective communication and alignment among departments to achieve strategic objectives.</p>
+
+    <div class="committee-slider fade-in">
+      <button class="committee-arrow committee-prev" type="button" aria-label="Previous">
+        &#10094;
+      </button>
+
+      <div class="committee-track-wrap">
+<div class="committee-track" id="committeeTrack">
+
+  <div class="committee-card">
+    <img src="images/Managing-Committee/01.Shahid-Zaib-Chairmen.jpg" alt="Shahid Zaib">
+    <div class="committee-info"><h3>Shahid Zaib</h3><p>Chairman</p></div>
+  </div>
+
+  <div class="committee-card">
+    <img src="images/Managing-Committee/02.Muhammad-Aamir-Siddique-President.png" alt="Aamir Siddiqui">
+    <div class="committee-info"><h3>Aamir Siddiqui</h3><p>President</p></div>
+  </div>
+
+  <div class="committee-card active">
+    <img src="images/Managing-Committee/03.Hafeez-Paracha-Sr.Vice-President.png" alt="Hafeez Paracha">
+    <div class="committee-info"><h3>Hafeez Paracha</h3><p>Sr. Vice President</p></div>
+  </div>
+
+  <div class="committee-card">
+    <img src="images/Managing-Committee/04.Syed-Faisal-Hussain-Vice-President.png" alt="Syed Faisal Hussain">
+    <div class="committee-info"><h3>Syed Faisal Hussain</h3><p>Vice President</p></div>
+  </div>
+
+  <div class="committee-card">
+    <img src="images/Managing-Committee/05.Syed-Sabir-Ali-General-Secretary.png" alt="Syed Sabir Ali">
+    <div class="committee-info"><h3>Syed Sabir Ali</h3><p>General Secretary</p></div>
+  </div>
+
+  <div class="committee-card">
+    <img src="images/Managing-Committee/06.Masood-Ali-Khan-Joint-Secretary.jpeg" alt="Masood Ali Khan">
+    <div class="committee-info"><h3>Masood Ali Khan</h3><p>Joint Secretary</p></div>
+  </div>
+
+  <div class="committee-card">
+    <img src="images/Managing-Committee/07-Najeeb-Farooqi-Information-Secretary.png" alt="Najeeb Farooqi">
+    <div class="committee-info"><h3>Najeeb Farooqi</h3><p>Information Secretary</p></div>
+  </div>
+
+  <div class="committee-card">
+    <img src="images/Managing-Committee/08-Muhammad-Usman-Finance-Secretary.png" alt="Muhammad Usman">
+    <div class="committee-info"><h3>Muhammad Usman</h3><p>Finance Secretary</p></div>
+  </div>
+
+  <div class="committee-card">
+    <img src="images/Managing-Committee/09-Zaffar-Butt-Executive-Member.png" alt="Zaffar Butt">
+    <div class="committee-info"><h3>Zaffar Butt</h3><p>Executive Member</p></div>
+  </div>
+
+  <div class="committee-card">
+    <img src="images/Managing-Committee/10-Muhammad-Jaweed-Executive-Member.jpg" alt="Muhammad Jaweed">
+    <div class="committee-info"><h3>Muhammad Jaweed</h3><p>Executive Member</p></div>
+  </div>
+
+  <div class="committee-card">
+    <img src="images/Managing-Committee/11.Syed-Ammar-Ul-Hasan-Naqvi-Executive-Member.png" alt="Syed Ammar Ul Hasan Naqvi">
+    <div class="committee-info"><h3>Syed Ammar Ul Hasan Naqvi</h3><p>Executive Member</p></div>
+  </div>
+
+</div>
       </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">🔗</div>
-        <h3>Co-ordination Committee II</h3>
-        <p>Chaired by Syed Faisal Hussain. Oversees joint activities and ensures coherence across union programs.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">⚖️</div>
-        <h3>Arbitration Committee</h3>
-        <p>Chaired by Hafeez Ur Rehman. Resolves disputes and grievances through fair, impartial arbitration processes.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">📈</div>
-        <h3>Business Development</h3>
-        <p>Chaired by Najeeb Farooqi. Drives membership growth, client engagement, and strategic partnerships.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">💻</div>
-        <h3>IT & Social Media</h3>
-        <p>Chaired by Syed Ammar ul Hasan Naqvi. Manages digital presence, IT infrastructure, and online engagement.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">🏗️</div>
-        <h3>Fabrication Committee</h3>
-        <p>Chaired by Muhammad Zaffar. Develops industry standards and best practices for OOH fabrication processes.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">🌱</div>
-        <h3>CSR Committee</h3>
-        <p>Chaired by Muhammad Javaid. Drives corporate social responsibility initiatives and community impact programs.</p>
-      </div>
+
+      <button class="committee-arrow committee-next" type="button" aria-label="Next">
+        &#10095;
+      </button>
     </div>
   </div>
-</section> -->
+</section>
+
+</section>
 
 <section class="cta-banner">
   <div class="container">
@@ -343,9 +485,9 @@
       <div class="footer-brand">
         <a href="index.html" class="footer-logo-link"><img src="images/final-logo-.png" alt="SOAA" class="footer-logo-img" /></a>
         <p>The only representative trade body for media owners in Out-of-Home Advertising across the province of Sindh, Pakistan.</p>
-        <div class="footer-socials"><a href="#" class="social-link" aria-label="Facebook">f</a><a href="#" class="social-link" aria-label="LinkedIn">in</a><a href="#" class="social-link" aria-label="Twitter">𝕏</a><a href="#" class="social-link" aria-label="Instagram">◻</a></div>
+        <div class="footer-socials"><a href="https://www.facebook.com/p/Sindh-Outdoor-Advertisers-Association-SOAA-61577595402277/" class="social-link" aria-label="Facebook" target="_blank">f</a><a href="https://www.linkedin.com/company/sindh-outdoor-advertisers-association-soaa" class="social-link" aria-label="LinkedIn" target="_blank">in</a><a href="https://twitter.com/soaakarachi" class="social-link" aria-label="Twitter" target="_blank">𝕏</a><a href="https://www.instagram.com/soaakarachi" class="social-link" aria-label="Instagram" target="_blank">◻</a></div>
       </div>
-      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="sub-committee.html">Sub Committee</a></li><li><a href="former-presidents.html">Former Presidents</a></li><li><a href="benefits.html">Benefits</a></li><li><a href="member-directory.html">Member Directory</a></li></ul></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="sub-committee.html">Sub Committee</a></li><li><a href="former-leaders.html">Former Leaders</a></li><li><a href="benefits.html">Benefits</a></li><li><a href="member-directory.html">Member Directory</a></li></ul></div>
       <div class="footer-col"><h4>Members Area</h4><ul><li><a href="become-a-member.html">Become a Member</a></li><li><a href="membership.html">Membership</a></li><li><a href="members.html">Members</a></li><li><a href="events.html">Events</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><span>📍</span><span>Ground Floor, R4/X, Block-B, Gulshan e Jamal Main Rashid-Minhas Road, Karachi</span></div><div class="footer-contact-item"><span>📞</span><span>+92 342 8363800</span></div><div class="footer-contact-item"><span>✉️</span><span>info@soaa.pk</span></div><div class="footer-contact-item"><span>🕐</span><span>Mon – Sat: 09:00 – 17:00</span></div></div>
     </div>
@@ -356,5 +498,85 @@
 
 
 <script src="js/script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.getElementById("committeeTrack");
+  const cards = Array.from(track.querySelectorAll(".committee-card"));
+  const prevBtn = document.querySelector(".committee-prev");
+  const nextBtn = document.querySelector(".committee-next");
+  const wrapper = document.querySelector(".committee-track-wrap");
+
+  let currentIndex = 2;
+  let startX = 0;
+  let currentTranslate = 0;
+  let isDragging = false;
+
+  function updateSlider() {
+    cards.forEach((card, index) => {
+      card.classList.toggle("active", index === currentIndex);
+    });
+
+    const wrapperWidth = wrapper.offsetWidth;
+    const activeCard = cards[currentIndex];
+    const cardLeft = activeCard.offsetLeft;
+    const cardWidth = activeCard.offsetWidth;
+
+    currentTranslate = (wrapperWidth / 2) - cardLeft - (cardWidth / 2);
+    track.style.transform = `translateX(${currentTranslate}px)`;
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateSlider();
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  wrapper.addEventListener("mousedown", function (e) {
+    isDragging = true;
+    startX = e.clientX;
+    wrapper.classList.add("dragging");
+  });
+
+  window.addEventListener("mouseup", function (e) {
+    if (!isDragging) return;
+
+    const diff = e.clientX - startX;
+
+    if (diff < -60) nextSlide();
+    if (diff > 60) prevSlide();
+
+    isDragging = false;
+    wrapper.classList.remove("dragging");
+  });
+
+  wrapper.addEventListener("touchstart", function (e) {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+
+  wrapper.addEventListener("touchend", function (e) {
+    if (!isDragging) return;
+
+    const endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
+
+    if (diff < -50) nextSlide();
+    if (diff > 50) prevSlide();
+
+    isDragging = false;
+  });
+
+  window.addEventListener("resize", updateSlider);
+
+  updateSlider();
+});
+</script>
 </body>
 </html>

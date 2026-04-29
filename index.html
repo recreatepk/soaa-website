@@ -6,6 +6,74 @@
   <title>SOAA – Sindh Outdoor Advertisers Association | Official Trade Body</title>
   <meta name="description" content="SOAA is the premier trade body for media owners in Pakistan's Out-of-Home advertising industry in the province of Sindh. Join us to grow, connect, and shape the future of OOH." />
   <link rel="stylesheet" href="css/style.css" />
+<style>
+  .message-slider {
+  max-width: 900px;
+  margin: auto;
+  background: var(--white);
+  padding: 50px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  cursor: grab;
+}
+
+.message-slider:active {
+  cursor: grabbing;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  align-items: center;
+}
+
+.slide {
+  min-width: 100%;
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.quote, .desc {
+  max-width: 700px;
+  margin: auto;
+}
+
+.quote {
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.desc {
+  font-size: 15px;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.author {
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.author span {
+  display: block;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .message-slider {
+    padding: 30px 20px;
+  }
+  .quote {
+    font-size: 16px;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -18,7 +86,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li class="dropdown"><a href="about.html">About</a><ul class="dropdown-menu"><li><a href="about.html">About SOAA</a></li><li><a href="sub-committee.html">Sub Committee</a></li><li><a href="former-presidents.html">Former President List</a></li></ul></li>
+        <li class="dropdown"><a href="about.html">About</a><ul class="dropdown-menu"><li><a href="about.html">About SOAA</a></li><li><a href="sub-committee.html">Sub Committee</a></li><li><a href="former-leaders.html">Former Leader List</a></li></ul></li>
         <li class="dropdown"><a href="benefits.html">Members Area</a><ul class="dropdown-menu"><li><a href="benefits.html">Benefits</a></li><li><a href="member-directory.html">Member Directory</a></li><li><a href="become-a-member.html">Become a Member</a></li></ul></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="news.html">News</a></li>
@@ -31,7 +99,7 @@
 </nav>
 <div class="mobile-menu">
   <button class="mobile-menu-close" aria-label="Close menu">✕</button>
-  <a href="index.html">Home</a><a href="about.html">About SOAA</a><a href="sub-committee.html">Sub Committee</a><a href="former-presidents.html">Former Presidents</a><a href="benefits.html">Benefits</a><a href="member-directory.html">Member Directory</a><a href="become-a-member.html">Become a Member</a><a href="events.html">Events</a><a href="news.html">News</a><a href="contact.html">Contact</a>
+  <a href="index.html">Home</a><a href="about.html">About SOAA</a><a href="sub-committee.html">Sub Committee</a><a href="former-leaders.html">Former Leaders</a><a href="benefits.html">Benefits</a><a href="member-directory.html">Member Directory</a><a href="become-a-member.html">Become a Member</a><a href="events.html">Events</a><a href="news.html">News</a><a href="contact.html">Contact</a>
 </div>
 
 <section class="hero">
@@ -88,20 +156,31 @@
         <div class="about-img-box">
           <div class="about-img-overlay"></div>
           <div class="about-img-text">
-            <div class="about-img-quote">"That Pakistan must move beyond an agricultural state and "give its economy an industrial bias". He aimed for high quality, saying, I would like Pakistan to become a synonym and hallmark for standard and quality in the world's marketplace"</div>
+            <!-- <div class="about-img-quote">"That Pakistan must move beyond an agricultural state and "give its economy an industrial bias". He aimed for high quality, saying, I would like Pakistan to become a synonym and hallmark for standard and quality in the world's marketplace"</div>
             <div class="about-img-attr">- Quaid-e-Azam Muhammad Ali Jinnah - Father of the Nation -</div>
-            <p>emphasized industrialization for Pakistan’s economic independence, stating on September 26, 1947</p>
+            <p>emphasized industrialization for Pakistan’s economic independence, stating on September 26, 1947</p> -->
+            <img src="images/side-banner1.jpg" alt="">
           </div>
         </div>
       </div>
       <div class="fade-in-right">
         <div class="section-label">Who We Are</div>
-        <h2 class="section-title">The Premier OOH Association<br />in <span>Sindh</span></h2>
+        <h2 class="section-title">The Premier OOH Associationin <span>Sindh</span></h2>
         <div class="divider"></div>
-        <p class="section-subtitle">
+        <!-- <p class="section-subtitle">
           Sindh Outdoor Advertisers Association - SOAA is the only representative trade body for media owners operating in Out-of-Home Advertising in the province of Sindh. We unite media owners, advertisers, and government to foster a future-ready OOH ecosystem.
+        </p> -->
+        <h2>Built by the Industry,<span>For the Industry</span></h2>
+        <p style="color:var(--dark-gray);line-height:1.8;margin-bottom:20px;">
+          SOAA was established in 2005 to represent the collective interests of outdoor advertising media owners across the province of Sindh. Although OOH is a very strong and effective medium worldwide, the local market has faced numerous challenges including regulatory complexity, payment cycle issues, and lack of industry standards.
         </p>
-        <div class="values-grid" style="margin-top:28px;">
+        <p style="color:var(--dark-gray);line-height:1.8;margin-bottom:20px;">
+          Our founding members recognized that a unified voice was essential, one that could negotiate with government authorities, set professional standards, and build the trust that brands need to invest confidently in OOH.
+        </p>
+        <p style="color:var(--dark-gray);line-height:1.8;margin-bottom:30px;">
+          From traditional hoardings to digital takeovers, SOAA is shaping how messages meet people in motion, smarter, cleaner, more responsible, and deeply connected to the pulse of our cities.
+        </p>
+        <!-- <div class="values-grid" style="margin-top:28px;">
           <div class="value-card fade-in">
             <h4>🎯 Our Vision</h4>
             <p>Elevate Sindh OOH landscape and unlock the industry's full potential through innovative, data-driven environments.</p>
@@ -118,12 +197,98 @@
             <h4>🤝 Community</h4>
             <p>Building meaningful connections among members through events, forums, and collaborative programs.</p>
           </div>
-        </div>
+        </div> -->
         <a href="about.html" class="btn btn-outline-dark" style="margin-top:28px;">Learn More About SOAA</a>
       </div>
     </div>
   </div>
 </section>
+
+
+<!-- Leadership Messages Slider -->
+<section class="section-pad" style="background:var(white);">
+  <div class="container">
+
+    <div class="text-center" style="margin-bottom:50px;">
+      <div class="section-label">Leadership Message</div>
+      <h2 class="section-title">Leadership <span>Voices</span></h2>
+      <div class="divider center"></div>
+    </div>
+
+    <div class="message-slider">
+      <div class="slides">
+
+        <!-- 1 -->
+        <div class="slide">
+          <p class="quote">
+            “That Pakistan must move beyond an agricultural state and give its economy an industrial bias. 
+            I would like Pakistan to become a synonym and hallmark for standard and quality in the world's marketplace.”
+          </p>
+          <p class="desc">
+            Emphasized industrialization for Pakistan’s economic independence, stated on September 26, 1947.
+          </p>
+          <div class="author">
+            Quaid-e-Azam Muhammad Ali Jinnah
+            <span>Father of the Nation</span>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="slide">
+          <p class="quote">
+            “After serving this industry for 30 years, I've witnessed it rise to success and collapse to rock bottom, not once but multiple times. Poor law and order, broken payment cycles, and mismanagement have pushed many hardworking advertisers to the edge.”
+          </p>
+          <p class="desc">
+            My vision for these two years is clear: to restore financial stability, secure smoother payment flows, and protect the working rights of every advertiser. We will rebuild client trust by creating a more organized, professional, and reliable outdoor advertising ecosystem.
+          </p>
+          <p class="quote">
+            “A strong industry is built on fairness, when the advertiser works freely, the client invests confidently.”
+          </p>
+          <div class="author">
+            Shahid Zaib
+            <span>Chairman, SOAA</span>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="slide">
+          <p class="quote">
+            “At SOAA, we see billboards as more than space. We see potential. Our skyline is our canvas, and our mission is to make sure that every square foot of it speaks with clarity, creativity, and purpose.”
+          </p>
+          <p class="desc">
+            We stand at the intersection of business and art, policy and progress. From traditional hoardings to digital takeovers, from wall murals to street-level activations, SOAA is shaping how messages meet people in motion. Together, we're reimagining what outdoor media can be, smarter, cleaner, more responsible, and deeply connected to the pulse of the city.
+          </p>
+          <div class="author">
+            Aamir Siddiqui
+            <span>President, SOAA</span>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="slide">
+          <p class="desc">
+            As the General Secretary of the Sindh Outdoor Advertisers Association - SOAA, and with over 30 years of experience in the outdoor advertising industry, my vision is to elevate the Out-of-Home (OOH) advertising industry through innovation, sustainable growth, and rightful recognition.
+          </p>
+          <p class="desc">
+            <strong>Promoting Innovation:</strong> We are committed to embracing emerging technologies and creative solutions that make OOH advertising more engaging, measurable, and relevant in today’s evolving marketplace.<br>
+            <strong>Fostering Growth:</strong> Our focus is on expanding the OOH advertising sector by creating new business opportunities, encouraging investment, and strengthening collaboration among industry stakeholders.<br>
+            <strong>Industry Recognition:</strong> We strive to ensure that the Out-of-Home advertising industry receives the respect and acknowledgment it truly deserves, positioning it as a vital contributor to the national economy.
+          </p>
+          <p class="desc">
+            <strong>A Shared Future:</strong> Together, let us build a future where OOH advertising plays a meaningful role in economic development and is recognized as a well-organized, regulated, and stable industry.
+          </p>
+          <div class="author">
+            Syed Sabir Ali
+            <span>General Secretary, SOAA</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- ═══ MEMBERSHIP BENEFITS ═══ -->
 <section class="membership-section section-pad">
@@ -166,9 +331,9 @@
         <p>Access SOAA's arbitration committee for fair, impartial resolution of industry disputes and member grievances.</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:44px;" class="fade-in">
+    <!-- <div style="text-align:center;margin-top:44px;" class="fade-in">
       <a href="membership.html" class="btn btn-primary">View Membership Plans</a>
-    </div>
+    </div> -->
   </div>
 </section>
 
@@ -178,7 +343,7 @@
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px;flex-wrap:wrap;gap:20px;" class="fade-in">
       <div>
         <div class="section-label">What's Happening</div>
-        <h2 class="section-title">Upcoming <span>Events</span></h2>
+        <h2 class="section-title">Events</span></h2>
         <div class="divider"></div>
       </div>
       <a href="events.html" class="btn btn-outline-dark">View All Events</a>
@@ -308,9 +473,9 @@
       <div class="footer-brand">
         <a href="index.html" class="footer-logo-link"><img src="images/final-logo-.png" alt="SOAA" class="footer-logo-img" /></a>
         <p>The only representative trade body for media owners in Out-of-Home Advertising across the province of Sindh, Pakistan.</p>
-        <div class="footer-socials"><a href="#" class="social-link" aria-label="Facebook">f</a><a href="#" class="social-link" aria-label="LinkedIn">in</a><a href="#" class="social-link" aria-label="Twitter">𝕏</a><a href="#" class="social-link" aria-label="Instagram">◻</a></div>
+        <div class="footer-socials"><a href="https://www.facebook.com/p/Sindh-Outdoor-Advertisers-Association-SOAA-61577595402277/" class="social-link" aria-label="Facebook" target="_blank">f</a><a href="#" class="social-link" aria-label="LinkedIn">in</a><a href="#" class="social-link" aria-label="Twitter">𝕏</a><a href="#" class="social-link" aria-label="Instagram">◻</a></div>
       </div>
-      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="sub-committee.html">Sub Committee</a></li><li><a href="former-presidents.html">Former Presidents</a></li><li><a href="benefits.html">Benefits</a></li><li><a href="member-directory.html">Member Directory</a></li></ul></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="sub-committee.html">Sub Committee</a></li><li><a href="former-leaders.html">Former Leaders</a></li><li><a href="benefits.html">Benefits</a></li><li><a href="member-directory.html">Member Directory</a></li></ul></div>
       <div class="footer-col"><h4>Members Area</h4><ul><li><a href="become-a-member.html">Become a Member</a></li><li><a href="membership.html">Membership</a></li><li><a href="members.html">Members</a></li><li><a href="events.html">Events</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><span>📍</span><span>Ground Floor, R4/X, Block-B, Gulshan e Jamal Main Rashid-Minhas Road, Karachi</span></div><div class="footer-contact-item"><span>📞</span><span>+92 342 8363800</span></div><div class="footer-contact-item"><span>✉️</span><span>info@soaa.pk</span></div><div class="footer-contact-item"><span>🕐</span><span>Mon – Sat: 09:00 – 17:00</span></div></div>
     </div>
@@ -321,5 +486,75 @@
 
 
 <script src="js/script.js"></script>
+<script>
+const slider = document.querySelector(".slides");
+const slides = document.querySelectorAll(".slide");
+
+let index = 0;
+let startX = 0;
+let isDragging = false;
+let auto;
+
+// update slide
+function updateSlide() {
+  slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// auto slide
+function startAuto() {
+  auto = setInterval(() => {
+    index = (index + 1) % slides.length;
+    updateSlide();
+  }, 5000);
+}
+
+function stopAuto() {
+  clearInterval(auto);
+}
+
+// TOUCH (mobile)
+slider.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+  stopAuto();
+});
+
+slider.addEventListener("touchend", e => {
+  let diff = startX - e.changedTouches[0].clientX;
+
+  if (diff > 50) index = (index + 1) % slides.length;
+  else if (diff < -50) index = (index - 1 + slides.length) % slides.length;
+
+  updateSlide();
+  startAuto();
+});
+
+// MOUSE DRAG (desktop)
+slider.addEventListener("mousedown", e => {
+  isDragging = true;
+  startX = e.clientX;
+  stopAuto();
+});
+
+slider.addEventListener("mouseup", e => {
+  if (!isDragging) return;
+
+  let diff = startX - e.clientX;
+
+  if (diff > 50) index = (index + 1) % slides.length;
+  else if (diff < -50) index = (index - 1 + slides.length) % slides.length;
+
+  updateSlide();
+  isDragging = false;
+  startAuto();
+});
+
+slider.addEventListener("mouseleave", () => {
+  isDragging = false;
+});
+
+// INIT
+updateSlide();
+startAuto();
+</script>
 </body>
 </html>
