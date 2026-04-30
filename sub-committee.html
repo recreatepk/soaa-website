@@ -6,6 +6,80 @@
   <title>About SOAA – Sindh Outdoor Advertisers Association</title>
   <meta name="description" content="Learn about SOAA's history, vision, mission, and the leadership team driving Sindh OOH advertising industry forward." />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* SECTION */
+.section {
+  padding: 70px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  color: var(--primary);
+}
+
+/* GRID 2 COLUMN */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+@media(max-width:768px){
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  padding: 25px;
+  border-left: 5px solid var(--secondary);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.card strong {
+  color: #000;
+}
+
+.card ul {
+  padding-left: 18px;
+}
+
+.card li {
+  margin-bottom: 8px;
+}
+/* ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: .6s;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+  </style>
 </head>
 <body>
 
@@ -44,131 +118,108 @@
   </div>
 </section>
 
-<!-- Leadership -->
-<!-- <section class="leadership-section section-pad">
-  <div class="container">
-    <div class="text-center fade-in">
-      <div class="section-label">Our Team</div>
-      <h2 class="section-title">Association <span>Leadership</span></h2>
-      <div class="divider center"></div>
-      <p class="section-subtitle">Industry veterans leading SOAA's mission to transform Sindh outdoor advertising landscape.</p>
-    </div>
-    <div class="leaders-grid">
-      <div class="leader-card fade-in">
-        <div class="leader-photo">SZ</div>
-        <div class="leader-info">
-          <div class="leader-name">Shahid Zaib</div>
-          <div class="leader-role">Chairman</div>
-          <p class="leader-bio">30+ years of OOH industry experience. Visionary leader committed to industry reform and stability.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">AS</div>
-        <div class="leader-info">
-          <div class="leader-name">Aamir Siddiqui</div>
-          <div class="leader-role">President</div>
-          <p class="leader-bio">Leading SOAA's strategic direction, building a smarter, more responsible OOH ecosystem.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">SF</div>
-        <div class="leader-info">
-          <div class="leader-name">Syed Faisal Hussain</div>
-          <div class="leader-role">Vice President</div>
-          <p class="leader-bio">Senior industry leader with 20+ years of proven excellence in OOH. Joined the industry in 2001 through Vision Publicity.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">HR</div>
-        <div class="leader-info">
-          <div class="leader-name">Hafeez ur Rehman</div>
-          <div class="leader-role">Sr. Vice President</div>
-          <p class="leader-bio">Heading key coordination and arbitration committees for effective governance.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">SA</div>
-        <div class="leader-info">
-          <div class="leader-name">Syed Sabir Ali</div>
-          <div class="leader-role">General Secretary</div>
-          <p class="leader-bio">Managing SOAA's administrative operations and member communications.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">MK</div>
-        <div class="leader-info">
-          <div class="leader-name">Masood Ali Khan</div>
-          <div class="leader-role">Joint Secretary</div>
-          <p class="leader-bio">Supporting governance and coordination across committees and member relations.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">MU</div>
-        <div class="leader-info">
-          <div class="leader-name">Muhammad Usman</div>
-          <div class="leader-role">Finance Secretary</div>
-          <p class="leader-bio">30+ years in marketing including roles at American Express Bank and MCB Bank. Expert in OOH budgeting and financial strategy.</p>
-        </div>
-      </div>
-      <div class="leader-card fade-in">
-        <div class="leader-photo">NF</div>
-        <div class="leader-info">
-          <div class="leader-name">Najeeb Farooqi</div>
-          <div class="leader-role">Information Secretary</div>
-          <p class="leader-bio">Driving SOAA's communications, public relations, and business development initiatives.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 <!-- Committees -->
-<section class="section-pad" style="background:var(--white);">
-  <div class="container">
-    <div class="text-center fade-in">
-      <div class="section-label">Governance</div>
-      <h2 class="section-title">Our <span>Committees</span></h2>
-      <div class="divider center"></div>
-      <p class="section-subtitle">Specialized committees ensuring effective governance, representation, and industry development.</p>
-    </div>
-    <div class="benefits-grid" style="margin-top:50px;">
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">🤝</div>
-        <h3>Co-ordination Committee I</h3>
-        <p>Chaired by Syed Sabir Ali. Facilitates effective communication and alignment among departments to achieve strategic objectives.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">🔗</div>
-        <h3>Co-ordination Committee II</h3>
-        <p>Chaired by Syed Faisal Hussain. Oversees joint activities and ensures coherence across union programs.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">⚖️</div>
-        <h3>Arbitration Committee</h3>
-        <p>Chaired by Hafeez Ur Rehman. Resolves disputes and grievances through fair, impartial arbitration processes.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">📈</div>
-        <h3>Business Development</h3>
-        <p>Chaired by Najeeb Farooqi. Drives membership growth, client engagement, and strategic partnerships.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">💻</div>
-        <h3>IT & Social Media</h3>
-        <p>Chaired by Syed Ammar ul Hasan Naqvi. Manages digital presence, IT infrastructure, and online engagement.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">🏗️</div>
-        <h3>Fabrication Committee</h3>
-        <p>Chaired by Muhammad Zaffar. Develops industry standards and best practices for OOH fabrication processes.</p>
-      </div>
-      <div class="benefit-card fade-in">
-        <div class="benefit-icon">🌱</div>
-        <h3>CSR Committee</h3>
-        <p>Chaired by Muhammad Javaid. Drives corporate social responsibility initiatives and community impact programs.</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+
+<div class="section-title fade-in">
+  <h2>SOAA Sub Committees</h2>
+</div>
+
+<div class="grid">
+
+<!-- CARD 1 -->
+<div class="card fade-in">
+<h3>Co-Ordination Committee</h3>
+<p><strong>Purpose:</strong> Ensures communication and alignment among departments.</p>
+<ul>
+<li>Strategic alignment of departments</li>
+<li>Effective communication channels</li>
+<li>Coordination of activities & programs</li>
+<li>Conflict resolution & problem solving</li>
+<li>Monitoring and evaluation</li>
+<li>Policy implementation support</li>
+</ul>
+<p><strong>Chairman:</strong> Sabir Ali / Syed Faisal Hussain</p>
+</div>
+
+<!-- CARD 2 -->
+<div class="card fade-in">
+<h3>Arbitration Committee</h3>
+<p><strong>Purpose:</strong> Resolves disputes fairly and transparently.</p>
+<ul>
+<li>Dispute resolution & hearings</li>
+<li>Evidence evaluation</li>
+<li>Decision making based on policies</li>
+<li>Mediation and negotiation</li>
+<li>Confidential record keeping</li>
+<li>Legal compliance</li>
+</ul>
+<p><strong>Chairman:</strong> Hafeez Ur Rehman</p>
+</div>
+
+<!-- CARD 3 -->
+<div class="card fade-in">
+<h3>Business Development Committee</h3>
+<p><strong>Purpose:</strong> Enhances client engagement & growth.</p>
+<ul>
+<li>Client relationship management</li>
+<li>Membership growth strategies</li>
+<li>Market research & insights</li>
+<li>Promotions & outreach</li>
+<li>Strategic partnerships</li>
+<li>Feedback & improvements</li>
+</ul>
+<p><strong>Chairman:</strong> Najeeb Farooqi</p>
+</div>
+
+<!-- CARD 4 -->
+<div class="card fade-in">
+<h3>IT & Social Media Committee</h3>
+<p><strong>Purpose:</strong> Manages digital presence and technology systems.</p>
+<ul>
+<li>Digital strategy & online presence</li>
+<li>Social media management</li>
+<li>IT infrastructure & security</li>
+<li>Website & content management</li>
+<li>Analytics & reporting</li>
+<li>Member digital support</li>
+</ul>
+<p><strong>Chairman:</strong> Syed Ammar Ul Hasan Naqvi</p>
+</div>
+
+<!-- CARD 5 -->
+<div class="card fade-in">
+<h3>Fabrication Committee</h3>
+<p><strong>Purpose:</strong> Ensures quality and standards in fabrication.</p>
+<ul>
+<li>Develop industry standards</li>
+<li>Policy advocacy</li>
+<li>Training & workshops</li>
+<li>Industry collaboration</li>
+<li>Research & innovation</li>
+<li>Quality assurance</li>
+</ul>
+<p><strong>Chairman:</strong> Muhammad Zaffar</p>
+</div>
+
+<!-- CARD 6 -->
+<div class="card fade-in">
+<h3>CSR Committee</h3>
+<p><strong>Purpose:</strong> Promotes corporate social responsibility.</p>
+<ul>
+<li>CSR strategy development</li>
+<li>Community engagement</li>
+<li>Sustainability initiatives</li>
+<li>Awareness programs</li>
+<li>Monitoring & reporting</li>
+<li>Ethical compliance</li>
+</ul>
+<p><strong>Chairman:</strong> Muhammad Javaid</p>
+</div>
+
+</div>
+</div>
 </section>
 
 <!-- ═══ FOOTER ═══ -->
@@ -191,5 +242,15 @@
 
 
 <script src="js/script.js"></script>
+<script>
+const items = document.querySelectorAll('.fade-in');
+window.addEventListener('scroll', () => {
+  items.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add('active');
+    }
+  });
+});
+</script>
 </body>
 </html>
