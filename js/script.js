@@ -168,3 +168,76 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+/* ── Slider ──────────────── */
+const slider = document.querySelector(".slides");
+const slides = document.querySelectorAll(".slide");
+
+let index = 0;
+let startX = 0;
+let isDragging = false;
+let auto;
+
+// update slide
+function updateSlide() {
+  slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// auto slide
+function startAuto() {
+  auto = setInterval(() => {
+    index = (index + 1) % slides.length;
+    updateSlide();
+  }, 10000);
+}
+
+function stopAuto() {
+  clearInterval(auto);
+}
+
+// TOUCH (mobile)
+slider.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+  stopAuto();
+});
+
+slider.addEventListener("touchend", e => {
+  let diff = startX - e.changedTouches[0].clientX;
+
+  if (diff > 50) index = (index + 1) % slides.length;
+  else if (diff < -50) index = (index - 1 + slides.length) % slides.length;
+
+  updateSlide();
+  startAuto();
+});
+
+// MOUSE DRAG (desktop)
+slider.addEventListener("mousedown", e => {
+  isDragging = true;
+  startX = e.clientX;
+  stopAuto();
+});
+
+slider.addEventListener("mouseup", e => {
+  if (!isDragging) return;
+
+  let diff = startX - e.clientX;
+
+  if (diff > 50) index = (index + 1) % slides.length;
+  else if (diff < -50) index = (index - 1 + slides.length) % slides.length;
+
+  updateSlide();
+  isDragging = false;
+  startAuto();
+});
+
+slider.addEventListener("mouseleave", () => {
+  isDragging = false;
+});
+
+// INIT
+updateSlide();
+startAuto();
+
+/* ── Managing Committee ──────────────── */
+
