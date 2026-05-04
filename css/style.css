@@ -2073,3 +2073,55 @@ footer {
     font-weight: bold;
   }
 }
+
+  /* <!-- Download Forms --> */
+
+.footer-subheading {
+  margin: 10px 0 5px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff; /* adjust according to your footer theme */
+}
+
+.footer-buttons {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-subheading {
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Button Style */
+.footer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Hover Effect */
+.footer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  background: linear-gradient(135deg, #0b5ed7, #084298);
+}
+
+/* Click Effect */
+.footer-btn:active {
+  transform: scale(0.97);
+}
