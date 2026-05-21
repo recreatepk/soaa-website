@@ -2125,3 +2125,48 @@ footer {
 .footer-btn:active {
   transform: scale(0.97);
 }
+
+/* ─── Member Directory: Excel Data Layout ─────────────── */
+.member-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.member-card .member-avatar {
+  flex: 0 0 60px;
+  margin-bottom: 0;
+}
+
+.member-details {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.member-info-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--mid-gray);
+  word-break: break-word;
+}
+
+.member-info-row strong {
+  color: var(--dark-gray);
+}
+
+.member-info-icon {
+  flex: 0 0 18px;
+}
+
+.members-grid {
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+}

@@ -106,8 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
     memberCards.forEach(card => {
       const name = card.querySelector('.member-name')?.textContent.toLowerCase() || '';
       const company = card.querySelector('.member-company')?.textContent.toLowerCase() || '';
+      const fullSearch = card.getAttribute('data-search') || card.textContent.toLowerCase();
       const type = card.getAttribute('data-type') || '';
-      const matchesSearch = name.includes(query) || company.includes(query);
+      const matchesSearch = name.includes(query) || company.includes(query) || fullSearch.includes(query);
       const matchesFilter = filterVal === 'all' || type === filterVal;
       card.style.display = matchesSearch && matchesFilter ? '' : 'none';
     });
