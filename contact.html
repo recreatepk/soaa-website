@@ -100,27 +100,33 @@
       <div class="fade-in-right">
         <div class="form-card">
           <h3 class="form-title">Send Us a Message</h3>
-          <form id="contactForm">
+          <form id="contactForm" novalidate>
+
+            <!-- Honeypot anti-spam (hidden from real users) -->
+            <div style="display:none;" aria-hidden="true">
+              <input type="text" name="website" id="cWebsite" tabindex="-1" autocomplete="off" />
+            </div>
+
             <div class="form-row">
               <div class="form-group">
                 <label for="cFirstName">First Name *</label>
-                <input type="text" id="cFirstName" name="firstName" placeholder="Your first name" required />
-                <div class="form-error"></div>
+                <input type="text" id="cFirstName" name="firstName" placeholder="Your first name" required autocomplete="given-name" />
+                <div class="form-error" id="errFirstName"></div>
               </div>
               <div class="form-group">
                 <label for="cLastName">Last Name *</label>
-                <input type="text" id="cLastName" name="lastName" placeholder="Your last name" required />
-                <div class="form-error"></div>
+                <input type="text" id="cLastName" name="lastName" placeholder="Your last name" required autocomplete="family-name" />
+                <div class="form-error" id="errLastName"></div>
               </div>
             </div>
             <div class="form-group">
               <label for="cEmail">Email Address *</label>
-              <input type="email" id="cEmail" name="email" placeholder="your@email.com" required />
-              <div class="form-error"></div>
+              <input type="email" id="cEmail" name="email" placeholder="your@email.com" required autocomplete="email" />
+              <div class="form-error" id="errEmail"></div>
             </div>
             <div class="form-group">
               <label for="cPhone">Phone Number</label>
-              <input type="tel" id="cPhone" name="phone" placeholder="+92 300 1234567" />
+              <input type="tel" id="cPhone" name="phone" placeholder="+92 300 1234567" autocomplete="tel" />
             </div>
             <div class="form-group">
               <label for="cSubject">Subject *</label>
@@ -134,17 +140,32 @@
                 <option value="media">Media / Press Enquiry</option>
                 <option value="other">Other</option>
               </select>
-              <div class="form-error"></div>
+              <div class="form-error" id="errSubject"></div>
             </div>
             <div class="form-group">
               <label for="cMessage">Your Message *</label>
               <textarea id="cMessage" name="message" placeholder="How can we help you? Please include as much detail as possible..." required></textarea>
-              <div class="form-error"></div>
+              <div class="form-error" id="errMessage"></div>
             </div>
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px;">Send Message</button>
-            <div class="form-success" id="contactSuccess">
-              ✅ Thank you for your message! We'll get back to you within 1–2 business days.
+
+            <button type="submit" id="contactSubmitBtn" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px;">
+              <span id="btnText">Send Message</span>
+              <span id="btnLoader" style="display:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:spin 1s linear infinite;vertical-align:middle;margin-right:6px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                Sending…
+              </span>
+            </button>
+
+            <!-- Success message -->
+            <div id="contactSuccess" style="display:none;margin-top:16px;padding:14px 18px;background:#eafaf1;border:1px solid #a9dfbf;border-radius:8px;color:#1e8449;font-size:15px;line-height:1.5;">
+              ✅ <strong>Message sent!</strong> Thank you for reaching out. We'll get back to you within 1–2 business days.
             </div>
+
+            <!-- Error message -->
+            <div id="contactError" style="display:none;margin-top:16px;padding:14px 18px;background:#fdf2f2;border:1px solid #f5c6cb;border-radius:8px;color:#c0392b;font-size:15px;line-height:1.5;">
+              ⚠️ <span id="contactErrorMsg">Something went wrong. Please try again or email us directly at <a href="mailto:info@soaa.pk" style="color:#c0392b;">info@soaa.pk</a>.</span>
+            </div>
+
           </form>
         </div>
       </div>
@@ -212,7 +233,7 @@
       <div class="footer-brand">
         <a href="index.html" class="footer-logo-link"><img src="images/final-logo-.png" alt="SOAA" class="footer-logo-img" /></a>
         <p>The only representative trade body for media owners in Out-of-Home Advertising across the province of Sindh, Pakistan.</p>
-        <div class="footer-socials"><a href="https://www.facebook.com/p/Sindh-Outdoor-Advertisers-Association-SOAA-61577595402277/" class="social-link" aria-label="Facebook" target="_blank">f</a><a href="https://www.linkedin.com/company/sindh-outdoor-advertisers-association-soaa" class="social-link" aria-label="LinkedIn" target="_blank">in</a><a href="https://twitter.com/soaakarachi" class="social-link" aria-label="Twitter" target="_blank">𝕏</a><a href="https://www.instagram.com/soaakarachi" class="social-link" aria-label="Instagram" target="_blank">◻</a></div>
+        <div class="footer-socials"><a href="https://www.facebook.com/p/Sindh-Outdoor-Advertisers-Association-SOAA-61577595402277/" class="social-link" aria-label="Facebook" target="_blank">f</a></div>
       </div>
       <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="managing-committee.html">Managing Committee</a></li><li><a href="sub-committee.html">Sub Committee</a></li><li><a href="former-leaders.html">Former Leaders</a></li><li><a href="benefits.html">Benefits</a></li><li><a href="member-directory.html">Member Directory</a></li></ul></div>
       <div class="footer-col"><h4>Members Area</h4><ul><li><a href="become-a-member.html">Become a Member</a></li><li><a href="members.html">Members</a></li><li><a href="events.html">Events</a></li><li><a href="news.html">News</a></li><li><a href="contact.html">Contact</a></li></ul></div>
@@ -237,5 +258,128 @@
 </footer>
 
 <script src="js/script.js"></script>
+
+<style>
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  #contactForm input.input-error,
+  #contactForm select.input-error,
+  #contactForm textarea.input-error {
+    border-color: #e74c3c !important;
+    background: #fff8f8;
+  }
+  .form-error { color: #e74c3c; font-size: 12px; margin-top: 4px; min-height: 16px; }
+</style>
+
+<script>
+(function () {
+  const form     = document.getElementById('contactForm');
+  const btnText  = document.getElementById('btnText');
+  const btnLoader= document.getElementById('btnLoader');
+  const submitBtn= document.getElementById('contactSubmitBtn');
+  const successEl= document.getElementById('contactSuccess');
+  const errorEl  = document.getElementById('contactError');
+  const errorMsg = document.getElementById('contactErrorMsg');
+
+  // ── Field refs ────────────────────────────────────────────────────────────
+  const fields = {
+    firstName : { el: document.getElementById('cFirstName'), err: document.getElementById('errFirstName') },
+    lastName  : { el: document.getElementById('cLastName'),  err: document.getElementById('errLastName')  },
+    email     : { el: document.getElementById('cEmail'),     err: document.getElementById('errEmail')     },
+    subject   : { el: document.getElementById('cSubject'),   err: document.getElementById('errSubject')   },
+    message   : { el: document.getElementById('cMessage'),   err: document.getElementById('errMessage')   },
+  };
+
+  // ── Helpers ───────────────────────────────────────────────────────────────
+  function setError(key, msg) {
+    fields[key].el.classList.add('input-error');
+    fields[key].err.textContent = msg;
+  }
+  function clearError(key) {
+    fields[key].el.classList.remove('input-error');
+    fields[key].err.textContent = '';
+  }
+  function clearAll() {
+    Object.keys(fields).forEach(clearError);
+    successEl.style.display = 'none';
+    errorEl.style.display   = 'none';
+  }
+
+  // ── Live validation (clear error on fix) ──────────────────────────────────
+  Object.keys(fields).forEach(key => {
+    fields[key].el.addEventListener('input', () => clearError(key));
+    fields[key].el.addEventListener('change', () => clearError(key));
+  });
+
+  // ── Client-side validation ────────────────────────────────────────────────
+  function validate() {
+    let valid = true;
+    if (!fields.firstName.el.value.trim()) { setError('firstName', 'Please enter your first name.'); valid = false; }
+    if (!fields.lastName.el.value.trim())  { setError('lastName',  'Please enter your last name.');  valid = false; }
+    const emailVal = fields.email.el.value.trim();
+    if (!emailVal) {
+      setError('email', 'Please enter your email address.'); valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+      setError('email', 'Please enter a valid email address.'); valid = false;
+    }
+    if (!fields.subject.el.value) { setError('subject', 'Please select a subject.'); valid = false; }
+    if (!fields.message.el.value.trim()) { setError('message', 'Please enter your message.'); valid = false; }
+    return valid;
+  }
+
+  // ── Set loading state ─────────────────────────────────────────────────────
+  function setLoading(on) {
+    submitBtn.disabled = on;
+    btnText.style.display  = on ? 'none'         : 'inline';
+    btnLoader.style.display= on ? 'inline-block' : 'none';
+  }
+
+  // ── Submit handler ────────────────────────────────────────────────────────
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    clearAll();
+
+    if (!validate()) return;
+
+    setLoading(true);
+
+    const payload = {
+      firstName : fields.firstName.el.value.trim(),
+      lastName  : fields.lastName.el.value.trim(),
+      email     : fields.email.el.value.trim(),
+      phone     : document.getElementById('cPhone').value.trim(),
+      subject   : fields.subject.el.value,
+      message   : fields.message.el.value.trim(),
+      website   : document.getElementById('cWebsite').value, // honeypot
+    };
+
+    try {
+      const res  = await fetch('mail.php', {
+        method  : 'POST',
+        headers : { 'Content-Type': 'application/json' },
+        body    : JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        form.reset();
+        successEl.style.display = 'block';
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        errorMsg.innerHTML = data.message || 'Something went wrong. Please email us at <a href="mailto:info@soaa.pk" style="color:#c0392b;">info@soaa.pk</a>.';
+        errorEl.style.display = 'block';
+      }
+    } catch (err) {
+      errorMsg.innerHTML = 'Could not connect to the server. Please email us at <a href="mailto:info@soaa.pk" style="color:#c0392b;">info@soaa.pk</a>.';
+      errorEl.style.display = 'block';
+    } finally {
+      setLoading(false);
+    }
+  });
+})();
+</script>
 </body>
 </html>

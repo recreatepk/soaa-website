@@ -1,0 +1,4 @@
+Place your company profile PDF in this folder.
+Example: company-profile.pdf
+
+No JavaScript change is required. Refresh index.php after adding the PDF.

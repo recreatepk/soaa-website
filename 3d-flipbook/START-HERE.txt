@@ -1,0 +1,21 @@
+MODERN 3D FLIPBOOK — START HERE
+
+1) Copy the entire "modern-3d-flipbook" folder into your website project.
+   You may rename the folder to "3d-flipbook".
+
+2) Put your company-profile PDF into:
+   3d-flipbook/pdf/
+
+3) Delete PLACE-PDF-HERE.txt if you want.
+
+4) Open in browser through your web server:
+   http://localhost/your-project/3d-flipbook/
+
+5) Add this to the website header:
+   <a href="/3d-flipbook/" target="_blank" rel="noopener" class="btn btn-primary">Company Profile</a>
+
+6) Optional: edit config.php to change viewer brand name, title, accent color,
+   back URL, download button, sound default, or a fixed PDF filename.
+
+IMPORTANT:
+Use Apache/Nginx/PHP/XAMPP. Do not double-click index.php as a file:// page.
